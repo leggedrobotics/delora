@@ -14,4 +14,5 @@ Reliable robot pose estimation is a key building block of many robot autonomy pi
 
 # Resources
 Paper: https://arxiv.org/pdf/2011.05418.pdf
+
 Video: https://youtu.be/rgeRseUTryA
