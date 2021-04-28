@@ -1,0 +1,10 @@
+# Byte compiled
+__pycache__/
+*.pyc
+*.egg-info
+.idea
+
+# Datasets
+datasets/darpa
+datasets/kitti
+mlruns/
