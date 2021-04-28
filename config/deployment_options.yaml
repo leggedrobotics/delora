@@ -1,0 +1,21 @@
+# Dataset
+## Selection
+datasets: ["kitti"] # Can contain multiple datasets, e.g. ["darpa", "kitti"]
+mode: "training" # Valid options: "training" and "testing", will also be set by training/testing scripts
+experiment: "trainings_experiments_1"
+
+# System information
+device: "cuda" # "cuda", "cpu", if multiple GPUs: select cuda device via CUDA_VISIBLE_DEVICES=...
+store_dataset_in_RAM: False # If false, each scan and normal file will be read from disk
+                            # For KITTI requires approximately 50GB RAM/SWAP
+num_dataloader_workers: 0 # default: 0
+
+## Comfort options
+unsupervised_at_start: False # if False, it starts to train supervised in the first epoch (Identity matching)
+inference_only: True # During testing, it does not compute any losses, during training: no impact
+log_normals: True
+visualize_images: True
+visualize_single_img_preprocessing: False
+
+## Performance options
+use_jit: False # Only thoroughly tested for inference

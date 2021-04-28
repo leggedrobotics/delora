@@ -1,0 +1,65 @@
+# General ------------------------------------
+## Deployment ------------
+horizontal_field_of_view: [ -179.9, 179.9 ] # Always this for rotating LiDAR sensors
+
+## Preprocessing ---------
+### Neighborhood estimation
+min_num_points_in_neighborhood_to_determine_point_class: 10 # neighborhood below this threshold --> no normal computed
+epsilon_plane: 0.01 # 1e-2, this is the epsilon value when eigenvalues are considered to describe a plane
+epsilon_line: 0.01 # 1e-2, -"- to describe a line
+epsilon_range: 0.5 # Epsilon when points are removed from patch used for normal estimation
+
+# KITTI --------------------------------------
+kitti: # must be the same as dataset name specified in deployment_options.yaml
+  ## Deployment --------
+  ### Training/testing configuration
+  training_identifiers: [ 0 , 1, 2, 3, 4, 5, 6, 7, 8 ]
+  testing_identifiers: [ 9, 10 ]
+  ### Sensor specs
+  vertical_field_of_view: [ -24.5, 2.0 ]  # taken from the datasheet, in degrees
+  vertical_cells: 64 # Number of LiDAR rings
+  horizontal_cells: 720 # Can be defined, should not be larger than horizontal resolution of LiDAR
+  ### Pre-processed file
+  preprocessed_path: "./datasets/kitti/preprocessed/sequences"
+  ### Ground-truth poses
+  pose_data_path: "./datasets/kitti/data_odometry_poses/dataset/poses"
+
+  ## Pre-processing ----
+  ### Dataset type, currently supported: "kitti" and "rosbag"
+  dataset_type: "kitti"
+  ### Specific configurations needed for pre-processing
+  horizontal_cells_preprocessing: 2250 # Calculated from 10Hz frequency of LiDAR
+  ### Preprocessing hyperparameters
+  neighborhood_side_length: [ 7, 11 ] # Patch dimensions used for normal estimation
+  ### Source files (before pre-processing)
+  data_path: "./datasets/kitti/data_odometry_velodyne/dataset/sequences" # Path to dataset
+  rosbag_path: "./datasets/kitti/rosbags/" # Only needed when converted to rosbag
+
+# DARPA --------------------------------------
+darpa:
+  ## Deployment --------
+  ### Training/testing configuration
+  training_identifiers: [ 0 ]
+  testing_identifiers: [ 0 ]
+  ### Sensor specs
+  vertical_field_of_view: [ -22.5, 22.5 ]
+  vertical_cells: 64
+  horizontal_cells: 512
+  ### Pre-processed file
+  preprocessed_path: "./datasets/darpa/preprocessed/sequences"
+  ### Ground-truth poses
+  pose_data_path: null
+
+  ## Pre-processing ----
+  ### Dataset type, currently supported: "kitti" and "rosbag"
+  dataset_type: "rosbag"
+  topic: "/sherman/lidar_points"
+  ### Specific configurations needed for pre-processing
+  horizontal_cells_preprocessing: 512
+  ### Preprocessing hyperparameters
+  neighborhood_side_length: [ 7, 11 ]
+  ### Source files (before pre-processing)
+  data_path: "./datasets/darpa"
+
+# Custom dataset
+custom: # etc.

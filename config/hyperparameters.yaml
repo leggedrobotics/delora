@@ -1,0 +1,33 @@
+# Training Parameters -------------------------------
+## Loss Computation
+batch_size: 1 # batch_size > 1 currently only supported if single image dims are used (vertical and horizontal cells)
+# In general: larger batches currently implemented rather primitively
+learning_rate: 0.00001 #1e-5
+lambda_po2pl: 1.0 # 10.0
+## Network training options
+use_dropout: False
+## Data Augmentation
+random_point_cloud_rotations: False # Data augmentation by rotating point cloud during training
+random_rotations_only_yaw: False # If set to true, and random_point_cloud_rotations set to true --> rotations only about yaw axis
+magnitude_random_rot: 4.0 # in degrees
+## Loss Functions
+normal_loss: "squared" # "squared" or "linear"
+rotation_losses_only_plane_to_plane: False
+point_to_point_loss: False
+point_to_plane_loss: True
+plane_to_plane_loss: True
+po2po_alone: False
+
+# Network Parameters ---------------------------------
+## Data Format
+normalization_scaling: False # If set to true --> lambda_po2pl should be increased
+## Model parameters
+###############num_input_channels: 8 # No impact yet
+activation_fct: "tanh" # "tanh" or "relu"
+resnet_outputs: 1000 # Output of the resnet, then fed into the rot/trans fully connected networks
+###############conv_size: [3, 5] # No impact yet
+pre_feature_extraction: False # Additional feature extraction layers before concatenation of input
+layers: [ 2, 2, 2, 2 ] # 4 down-sampling steps, num resnet blocks (2 layers each) per down-sampling (2 here)
+                       # [ 1, 1, 1, 1 ] e.g. results in half as many layers
+factor_fewer_resnet_channels: 1 # 4 leads to approximately 15 times fewer weights
+use_single_mlp_at_output: False # Single big MLP at output
