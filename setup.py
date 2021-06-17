@@ -13,10 +13,11 @@ class CustomInstallCommand(install):
         print("--------------------------------")
         install.run(self)
 
+
 setup(name='DeLORA',
       version='1.0',
       author='Julian Nubert (nubertj@ethz.ch)',
-      package_dir={"":"src"},
+      package_dir={"": "src"},
       install_requires=[
           'numpy',
           'torch',
@@ -25,8 +26,8 @@ setup(name='DeLORA',
           'rospkg'
       ],
       scripts=['bin/preprocess_data.py', 'bin/run_rosnode.py', 'bin/run_testing.py', 'bin/run_training.py',
-               'bin/visualize_pointcloud_normals.py', 'bin/clone_and_preprocess_darpa_dataset.sh'],
+               'bin/visualize_pointcloud_normals.py'],
       license='LICENSE',
       description='Self-supervised Learning of LiDAR Odometry for Robotic Applications',
-      cmdclass={'install': CustomInstallCommand,},
+      cmdclass={'install': CustomInstallCommand, },
       )
