@@ -2,8 +2,9 @@
 
 ## Overview
 
-* Paper: https://arxiv.org/pdf/2011.05418.pdf
-* Video: https://youtu.be/rgeRseUTryA
+* Paper: [link](https://arxiv.org/pdf/2011.05418.pdf)
+* Video: [link](https://youtu.be/rgeRseUTryA)
+* ICRA Presentation: [link](https://youtu.be/83Bn2zKi-bQ)
 
 This is the corresponding code to the above paper ("Self-supervised Learning of LiDAR Odometry for Robotic
 Applications") which is published at the International Conference on Robotics and Automation (ICRA) 2021. The code is
