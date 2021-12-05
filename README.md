@@ -97,8 +97,7 @@ preprocess_data.py
 ### Custom Dataset
 
 If you want to add an own dataset please add its sensor specifications
-to [./config/config_datasets.yaml](./config/config_datasets.yaml)
-and [./config/config_datasets_preprocessing.yaml](./config/config_datasets_preprocessing.yaml). Information that needs
+to [./config/config_datasets.yaml](./config/config_datasets.yaml). Information that needs
 to be added is the dataset name, its sequences and its sensor specifications such as vertical field of view and number
 of rings.
 
