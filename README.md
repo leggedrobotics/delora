@@ -10,8 +10,7 @@ This is the corresponding code to the above paper ("Self-supervised Learning of 
 Applications") which is published at the International Conference on Robotics and Automation (ICRA) 2021. The code is
 provided by the [Robotics Systems Lab](https://rsl.ethz.ch/) at ETH Zurich, Switzerland.
 
-**
-Authors:** [Julian Nubert](https://juliannubert.com/) ([julian.nubert@mavt.ethz.ch](mailto:julian.nubert@mavt.ethz.ch?subject=[GitHub]))
+**Authors:** [Julian Nubert](https://juliannubert.com/) ([julian.nubert@mavt.ethz.ch](mailto:julian.nubert@mavt.ethz.ch?subject=[GitHub]))
 , [Shehryar Khattak](https://www.linkedin.com/in/shehryar-khattak/)
 , [Marco Hutter](https://rsl.ethz.ch/the-lab/people/person-detail.MTIxOTEx.TGlzdC8yNDQxLC0xNDI1MTk1NzM1.html)
 
